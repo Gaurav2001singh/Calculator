@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Bungee+Tint&family=Nerko+One&family=New+Amsterdam&family=Playwrite+CU:wght@100..400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "New Amsterdam", sans-serif;
+}
+ body{
+    background-color: #2B2B2B;
+    display: flex;
+    justify-content: center;
+ }
+ #calC{
+   width: 1px;
+ }
+ .container{
+    background-color:black ;
+    margin-top: 2%;
+    padding: 2%;
+    border: 1px solid white;
+
+ }
+ .row{
+    background-color: black;
+ }
+ #Color{
+    background-color:black;
+    color: white;
+ }
+ #yellow{
+    background-color: red;
+    color: white;
+ }
+ .button{
+    background-color: black;
+    color: red;
+    padding: 30px;
+    width: 10px;
+    font-size: 25px;
+    border: 1px solid white;
+    border-radius: 5%;
+    margin-bottom: 10px;
+    cursor: pointer;
+ }
+ input{
+    color: white;
+    /* font-size: 35px; */
+    width: 57%;
+    height: 17%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: transparent;
+    cursor: pointer;
+ }
+ input::placeholder{
+    font-size: 35px;
+    color: white;
+ }
+
+
