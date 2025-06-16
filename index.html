@@ -5,39 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>    
     <div class="container">
-        <h1 style="color: white;" id="calC">Calculator </h1>
-        
-        <button class="button" id="yellow" value="C">C</button>
-        
-
-        <input type="text" placeholder="0">
-
+        <h1>Calculator <strong>25</strong></h1>
+        <div class="cidBtn">
+            <button class="button" value="C">C</button>
+            <input type="text" id="inputText" placeholder="CAlCULATOR" disabled>
+            <button class="button color" id="delete" value="DEL">DEL</button>
+        </div>
         <div class="row">
             <button class="button" value="7">7</button>
-            <button class="button" value="8">8</button>
-            <button class="button" value="9">9</button>
-            <button class="button" id="Color" value="/">/</button>
+            <button class="button color2" value="8">8</button>
+            <button class="button color2" value="9">9</button>
+            <button class="button color" value="/">/</button>
         </div>
         <div class="row">
             <button class="button" value="4">4</button>
-            <button class="button" value="5">5</button>
-            <button class="button" value="6">6</button>
-            <button class="button" id="Color" value="*">*</button>
+            <button class="button color2" value="5">5</button>
+            <button class="button color2" value="6">6</button>
+            <button class="button color" value="*">*</button>
         </div>
         <div class="row">
             <button class="button" value="1">1</button>
-            <button class="button" value="2">2</button>
-            <button class="button" value="3">3</button>
-            <button class="button" id="Color" value="-">-</button>
+            <button class="button color2" value="2">2</button>
+            <button class="button color2" value="3">3</button>
+            <button class="button color" value="-">-</button>
         </div>
         <div class="row">
             <button class="button" value="0">0</button>
-            <button class="button" id="Color" value=".">.</button>
-            <button class="button" id="Color" value="=">=</button>
-            <button class="button" id="Color" value="+">+</button>
+            <button class="button color" value=".">.</button>
+            <button class="button color" value="=">=</button>
+            <button class="button color" value="+">+</button>
         </div>
     </div>
     <script src="app.js"></script>

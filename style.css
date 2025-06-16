@@ -1,63 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Bungee+Tint&family=Nerko+One&family=New+Amsterdam&family=Playwrite+CU:wght@100..400&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "New Amsterdam", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "New Amsterdam", sans-serif;
 }
- body{
-    background-color: #2B2B2B;
-    display: flex;
-    justify-content: center;
- }
- #calC{
-   width: 1px;
- }
- .container{
-    background-color:black ;
-    margin-top: 2%;
-    padding: 2%;
-    border: 1px solid white;
 
- }
- .row{
-    background-color: black;
- }
- #Color{
-    background-color:black;
-    color: white;
- }
- #yellow{
-    background-color: red;
-    color: white;
- }
- .button{
-    background-color: black;
-    color: red;
-    padding: 30px;
-    width: 10px;
-    font-size: 25px;
-    border: 1px solid white;
-    border-radius: 5%;
-    margin-bottom: 10px;
-    cursor: pointer;
- }
- input{
-    color: white;
-    /* font-size: 35px; */
-    width: 57%;
-    height: 17%;
-    border: none;
-    outline: none;
-    padding: 10px;
-    margin-bottom: 15px;
-    background: transparent;
-    cursor: pointer;
- }
- input::placeholder{
-    font-size: 35px;
-    color: white;
- }
+body {
+  background: radial-gradient(circle, rgb(234, 230, 230), rgb(14, 13, 13));
+  display: flex;
+  justify-content: center;
+}
+.container:hover {
+  background: radial-gradient(circle, rgb(234, 230, 230), rgb(14, 13, 13));
+}
 
+.container {
+  margin: 35px 0;
+  padding: 20px;
+  background-color: #111;
+  border: 10px solid black;
+  border-radius: 25px;
+}
 
+.container h1 {
+  padding: 10px 0;
+  margin: 25px 0;
+  font-family: 'Bungee Tint';
+  animation: calcAnim 2s ease-in-out infinite
+}
+@keyframes calcAnim {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 2px 2px 20px white;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+    text-shadow: 2px 2px 20px red;
+  }
+}
+.container input::placeholder {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.cidBtn {
+  display: flex;
+  gap: 3px;
+  margin: 2px -20px;
+}
+
+#inputText {
+  background: radial-gradient(red, black);
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  z-index: 1;
+  animation: snakeBorder 3s infinite;
+}
+@keyframes snakeBorder {
+  0% {
+    border: 3px solid white;
+  }
+  100% {
+    border: 3px solid red;
+  }
+}
+
+button.color {
+  background-color: white;
+  color: red;
+  box-shadow: 2px 2px 10px red;
+}
+
+button.color:active {
+  transition: all 1ms ease-in-out;
+  transform: scale(1.1);
+  background-color: #FA8710;
+  color: whitesmoke;
+}
+
+.button {
+  background-color: black;
+  color: white;
+  box-shadow: 2px 2px 10px white;
+  padding: 30px;
+  width: 10px;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.button:active {
+  transition: all 1ms ease-in-out;
+  transform: scale(1.1);
+  background-color: green;
+}
+
+.color2 {
+  background: radial-gradient(background, rgb(58, 59, 59), rgb(255, 255, 255));
+  color: blue;
+  box-shadow: none;
+  box-shadow: 2px 2px blue;
+}
