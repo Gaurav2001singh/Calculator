@@ -17,11 +17,12 @@ body {
 }
 
 .container {
-  margin: 35px 0;
-  padding: 20px;
+  margin: 20px 0;
+  padding: 15px;
   background-color: #111;
   border: 10px solid black;
   border-radius: 25px;
+  z-index: 1;
 }
 
 .container h1 {
@@ -42,9 +43,8 @@ body {
     text-shadow: 2px 2px 20px red;
   }
 }
-.container input::placeholder {
+input::placeholder {
   color: white;
-  margin-bottom: 10px;
 }
 
 .cidBtn {
@@ -107,6 +107,91 @@ button.color:active {
 .color2 {
   background: radial-gradient(background, rgb(58, 59, 59), rgb(255, 255, 255));
   color: blue;
-  box-shadow: none;
   box-shadow: 2px 2px blue;
+}
+
+/* .color2:active{
+  transition: all 1ms ease-in-out;
+  transform: scale(1.2);
+  background-color: blue;
+  color: white;
+} */
+
+.historyPanel {
+  transform: translateX(100%);
+  transition: all 1s ease-in-out;
+  border: 10px solid black;
+  border-right: white;
+  border-radius: 100px 0 0 100px;
+  background-color: white;
+  color: red;
+  margin: 100px 0;
+  padding: 50px 15px;
+  position: fixed;
+  top: 0;
+  left: 300px;
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.historyPanel.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(4%);
+}
+#showHistoryBtn{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0 95px;
+  padding: 5px 5px;
+}
+.historyPanel button{
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: white;
+  border-top: 10px solid white;
+  border-bottom: 10px solid white;
+  box-shadow: 2px 20px 10px black;
+  margin: -10px 70px;
+}
+
+#historyList {
+  max-height: 350px;
+  overflow-y:scroll;
+  padding-left: 40px;
+  margin-top: 25px;
+  color: green;
+  font-size: larger;
+}
+#historyList li {
+  font-size: 20px;
+  color: black;
+  list-style: decimal;
+  border: 1px solid black;
+  border-radius: 15px 0px 15px 0px ;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#historyList li::marker {
+  color: red;
+}
+
+#historyList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#historyList::-webkit-scrollbar-track {
+  background:radial-gradient(circle,red,white);
+  border-radius: 10px;
+}
+
+#historyList::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.8);
 }
