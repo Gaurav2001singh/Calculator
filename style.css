@@ -12,9 +12,6 @@ body {
   display: flex;
   justify-content: center;
 }
-.container:hover {
-  background: radial-gradient(circle, rgb(234, 230, 230), rgb(14, 13, 13));
-}
 
 .container {
   margin: 20px 0;
@@ -25,33 +22,51 @@ body {
   z-index: 1;
 }
 
+.container:hover {
+  background: radial-gradient(circle, rgb(234, 230, 230), rgb(14, 13, 13));
+}
+
+.container span{
+  color: white;
+}
 .container h1 {
   padding: 10px 0;
   margin: 25px 0;
   font-family: 'Bungee Tint';
-  animation: calcAnim 2s ease-in-out infinite
+  animation: calcAnimation 2s ease-in-out infinite
 }
-@keyframes calcAnim {
-  0%, 100% {
-    transform: scale(1);
+@keyframes calcAnimation {
+  0% {
+    transform: scale(0.2);
     opacity: 1;
     text-shadow: 2px 2px 20px white;
   }
+  25%{
+    rotate: -5deg;
+  }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 0.8;
-    text-shadow: 2px 2px 20px red;
+    text-shadow: 2px 2px 100px white;
+  }
+  75%{
+    rotate: 5deg;
+  }
+  100%{
+    rotate:0deg;
   }
 }
-input::placeholder {
-  color: white;
-}
 
-.cidBtn {
+.cdBtn {
   display: flex;
   gap: 3px;
   margin: 2px -20px;
 }
+
+input::placeholder {
+  color: white;
+}
+
 
 #inputText {
   background: radial-gradient(red, black);
@@ -61,11 +76,15 @@ input::placeholder {
   color: white;
   outline: none;
   z-index: 1;
-  animation: snakeBorder 3s infinite;
+  animation: snakeBorder 2s infinite;
 }
+
 @keyframes snakeBorder {
   0% {
     border: 3px solid white;
+  }
+  50%{
+    transform: scale(1.05);
   }
   100% {
     border: 3px solid red;
@@ -119,7 +138,7 @@ button.color:active {
 
 .historyPanel {
   transform: translateX(100%);
-  transition: all 1s ease-in-out;
+  transition: all 2s ease-in-out;
   border: 10px solid black;
   border-right: white;
   border-radius: 100px 0 0 100px;
@@ -131,8 +150,10 @@ button.color:active {
   top: 0;
   left: 300px;
   width: 300px;
-  height: 500px;
+  height: 70vh;
   overflow: hidden;
+  background: radial-gradient(white,rgb(32, 28, 28));
+
 }
 
 .historyPanel.show {
@@ -148,6 +169,10 @@ button.color:active {
   margin: 0 95px;
   padding: 5px 5px;
 }
+#showHistoryBtn:active{
+  transform: scale(1.2);
+  box-shadow: 0 0 10px red;
+}
 .historyPanel button{
   font-size: 15px;
   font-family: 'Courier New', Courier, monospace;
@@ -157,15 +182,24 @@ button.color:active {
   border-bottom: 10px solid white;
   box-shadow: 2px 20px 10px black;
   margin: -10px 70px;
+  cursor: pointer;
+}
+.historyPanel button:active{
+  color: rgb(32, 205, 5);
+  transform:scale(1.05);
 }
 
 #historyList {
-  max-height: 350px;
+  max-height: 320px;
   overflow-y:scroll;
   padding-left: 40px;
-  margin-top: 25px;
+  margin-top: 35px;
+}
+
+#historyList h3{
   color: green;
-  font-size: larger;
+  margin: 5px 30px;
+
 }
 #historyList li {
   font-size: 20px;
@@ -194,4 +228,39 @@ button.color:active {
 #historyList::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.8);
+}
+
+@media (min-width: 200px) and (max-width:1200px){
+.historyPanel{
+  position: fixed;
+  top: -10%;
+  left: 22%;
+  transform: translateY(100%);
+  max-height: 330px;
+  border-radius: 30px;
+  border-right:10px solid black;
+}
+
+.historyPanel.show{
+  display: block;
+  z-index: 2;
+  top: 35%;
+  left: 36%;
+}
+
+.historyPanel button{
+  border: none;
+  box-shadow: none;
+  font-size: 12px;
+  padding: 5px 0;
+  position: relative;
+  bottom: 40px;
+}
+
+#historyList {
+  overflow-y:scroll;
+  padding-left: 40px;
+  margin-top: -40px;
+}
+
 }

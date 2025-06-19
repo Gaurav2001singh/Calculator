@@ -18,9 +18,9 @@ function saveToHistory(entry) {
 // Display history
 function displayHistory() {
     const history = JSON.parse(localStorage.getItem(historyKey)) || [];
-    historyList.innerHTML = "CHECK YOUR HISTORY";
+    historyList.innerHTML = "<h3>Check Your History</h3>";
     if (history.length === 0) {
-        historyList.innerHTML = "<strong>No history found</strong>";
+        historyList.innerHTML = "<h3>No history found</h3>";
         return;
     }
     history.forEach(item => {
@@ -42,7 +42,7 @@ showHistoryBtn.addEventListener("click", () => {
 // Clear history
 clearHistoryBtn.addEventListener("click", () => {
     localStorage.removeItem(historyKey);
-    historyList.innerHTML = "<strong>History cleared</strong>";
+    historyList.innerHTML = "<h3>History cleared</h3>";
 
     setTimeout(()=>{
         displayHistory();
@@ -73,9 +73,9 @@ buttons.forEach((button) => {
                 input.value = "READY";
             }, 1000);
 
-        } else if (val === "C") {
+        } else if (val === "AC") {
             string = "";
-            input.value = "CLEAR";
+            input.value = "All CLEAR";
             setTimeout(() => {
                 input.value = "IN USE";
             }, 500);
